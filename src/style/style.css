@@ -1,0 +1,81 @@
+form {
+  border-radius: 10px !important;
+}
+form .react-datepicker-wrapper {
+  width: 100%;
+}
+form .react-datepicker-wrapper input {
+  width: 100%;
+  border: 1px solid #dee2e6;
+}
+form input {
+  padding: 10px !important;
+  border-radius: 10px !important;
+}
+form .datePicker:focus {
+  border-color: #86b7fe !important;
+  outline: none;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+form button {
+  background-color: #00a233 !important;
+}
+
+/*Table style*/
+.sc-dmXWDj {
+  border: 1px solid #ecedf0;
+  box-shadow: 0 4px 8px 0 rgba(236, 237, 240, 255),
+    0 6px 20px 0 rgba(236, 237, 240, 255);
+}
+.sc-eTNRI {
+  color: #afbec0;
+  font-weight: 500;
+}
+.rdt_TableBody {
+  max-height: 245px;
+  overflow: auto;
+}
+.sc-hLQSwg button {
+  border-radius: 10px;
+  font-size: 10px;
+  margin-right: 10px;
+}
+.sc-hLQSwg button:nth-child(2) {
+  margin-right: 5px;
+}
+.sc-hLQSwg button:last-child {
+  margin-right: 0px;
+  padding: 5px 5px;
+}
+.sorting button {
+  background-color: #00a232;
+  border: 1px solid #00a232;
+  margin-left: 10px;
+  font-size: 12px;
+}
+.sorting strong {
+  color: #afbec0;
+}
+
+/* Media queries */
+@media only screen and (max-width: 1120px) {
+  .sc-hLQSwg button {
+    font-size: 8px;
+    padding: 5px 5px !important;
+  }
+  .ehUDRj {
+    min-width: auto !important;
+    max-width: auto !important;
+  }
+}
+@media only screen and (max-width: 1042px) {
+  .sc-hLQSwg button {
+    padding: 5px 5px !important;
+  }
+}
+@media only screen and (max-width: 1042px) {
+  .sc-hLQSwg button {
+    margin-right: 3px !important;
+    padding: 5px 5px !important;
+  }
+}
