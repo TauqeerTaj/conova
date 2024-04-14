@@ -13,18 +13,23 @@ const Search = () => {
   });
 
   useEffect(() => {
-    const delayDebounceFn = setTimeout(() => {
-      if (state.searchValue) {
+    if (state.searchValue.length >= 3) {
+      const delayDebounceFn = setTimeout(() => {
         const filteredResults = list.filter((item: formData) =>
           item.title.toLowerCase().includes(state.searchValue.toLowerCase())
         );
-        setFilteredList([...filteredResults]);
-      } else {
-        getAllData(setList);
-      }
-    }, 1000);
+        if (filteredResults.length <= 0) {
+          state.searchValue = "";
+          setFilteredList([]);
+        } else {
+          setFilteredList([...filteredResults]);
+        }
+      }, 1000);
 
-    return () => clearTimeout(delayDebounceFn);
+      return () => clearTimeout(delayDebounceFn);
+    } else {
+      getAllData(setList);
+    }
   }, [state.searchValue]);
 
   const changeHandler = (e: React.FormEvent<HTMLInputElement>) => {
@@ -36,6 +41,7 @@ const Search = () => {
         <Input
           placeholder="Search the record..."
           type="search"
+          value={state.searchValue}
           onChange={changeHandler}
         />
       </FormGroup>

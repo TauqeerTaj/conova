@@ -9,7 +9,7 @@ export const insertDataInIndexedDb = () => {
     return;
   }
 
-  const request = idb.open("upvotes-db", 1);
+  const request = idb.open("upvotes-db", 3);
 
   request.onerror = function (event) {
     console.error("An error occurred with IndexedDB");
@@ -29,6 +29,13 @@ export const insertDataInIndexedDb = () => {
 
   request.onsuccess = function () {
     console.log("Database opened successfully");
+
+    const db = request.result;
+
+    var tx = db.transaction("upvotesData", "readwrite");
+    tx.objectStore("upvotesData");
+
+    return tx.oncomplete;
   };
 };
 
